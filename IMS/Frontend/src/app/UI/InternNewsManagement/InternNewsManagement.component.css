@@ -1,0 +1,30 @@
+body {
+  color: black;
+  background-color: #F8F8F8;
+}
+.nav-search {
+  padding-top: 10px;
+}
+.post {
+  border: 1px solid;
+  border-radius: 5px;
+}
+.nav-pag {
+  margin-top: 10px;
+}
+.content-name {
+  margin-top: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+  background-color: white;
+  border-radius: 5px;
+}
+.content-right {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.companyName {
+  margin-left: 75px;
+}

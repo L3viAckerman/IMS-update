@@ -1,0 +1,108 @@
+
+<br />
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" [style.padding.px]="0">
+
+          <button type="button" [ngClass]="'btn btn-secondary btnLecturer'" routerLink="/Lecturers/Infos">Thông tin cá nhân</button>
+
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" [style.padding.px]="0">
+
+          <!-- <button type="button" class="btn btn-primary btnLecturer">Danh sách sinh viên</button> -->
+
+          <button type="button" [ngClass]="'btn btn-secondary btnLecturer'">Danh sách sinh viên</button>
+
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" [style.padding.px]="0">
+
+          <button type="button" [ngClass]="'btn btn-primary btnLecturer'" routerLink="/Lecturers/Reports">Báo cáo</button>
+      </div>
+  </div>
+
+</div>
+
+<div class="table" style="margin: 15px">
+  <table class="table table-bordered table-sm">
+          <thead>
+            <tr style="text-align: center">
+              <th>STT</th>
+              <th>Ngày gửi</th>
+              <th>Mục</th>
+              <th>Người gửi</th>
+              <th>Tác vụ</th>
+              <th>Nhận xét của DN</th>
+              <th>Điểm</th>
+            </tr>
+          </thead>
+          <tbody style="text-align: center">
+            <tr>
+              <td>1</td>
+              <td>20/4/2018</td>   
+              <td>Báo cáo định kỳ</td>
+              <td>Nguyễn A</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm">
+                    <i style="size: 9x" class="fa far fa-file"></i>
+                </button>
+                <button type="button" class="btn btn-success btn-sm">
+                    <i class="fa fas fa-download"></i>
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm">
+                    <i style="size: 9x" class="fa far fa-file"></i>
+                </button>
+            </td>
+
+              <td>Chưa có</td>                                                 
+            </tr>
+
+            <tr>
+                  <td>2</td>
+                  <td>20/4/2018</td>   
+                  <td>Báo cáo định kỳ</td>
+                  <td>Nguyễn A</td>
+                  <td>
+                    <button type="button" class="btn btn-primary btn-sm">
+                        <i style="size: 9x" class="fa far fa-file"></i>
+                    </button>
+                    <button type="button" class="btn btn-success btn-sm">
+                        <i class="fa fas fa-download"></i>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-sm">
+                        <i style="size: 9x" class="fa far fa-file"></i>
+                    </button>
+                </td>
+
+                  <td>Chưa có</td>                                                 
+                </tr>
+
+              <tr>
+                  <td>3</td>
+                  <td>20/4/2018</td>   
+                  <td>Báo cáo định kỳ</td>
+                  <td>Nguyễn A</td>
+                  <td>
+                    <button type="button" class="btn btn-primary btn-sm">
+                        <i style="size: 9x" class="fa far fa-file"></i>
+                    </button>
+                    <button type="button" class="btn btn-success btn-sm">
+                        <i class="fa fas fa-download"></i>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-sm">
+                        <i style="size: 9x" class="fa far fa-file"></i>
+                    </button>
+                </td>
+                  <td>Chưa có</td>                                                 
+              </tr>
+          </tbody>
+        </table>                  
+</div>
+<div class="more" style="text-align: center">
+<button class="btn btn-primary" type="submit">Xem thêm</button>
+</div>

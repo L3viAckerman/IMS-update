@@ -1,0 +1,93 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/assets/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <script src="~/assets/jquery-3.2.1.min.js"></script>
+    <script src="~/assets/bootstrap/js/bootstrap.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+
+    <style>
+        .container {
+            color: darkblue;
+            text-align: left;
+        }
+        .mid-left {
+            color: white;
+            padding-left: 50px;
+            padding-top: 10px;
+            border: solid;
+        }
+        .mid-right{
+            padding-top: 10px;
+            color: white;
+            padding-right: 50px;
+            border: solid;
+        }
+        .footer {
+            color: white;
+            padding-left: 50px;
+            border: solid;
+        }
+    </style>
+</head>
+
+<body>
+<section class="row container">
+    <div class="col-sm-2">
+        <img src="Views/App/logo_uet.jpg" height="70" width="70"/>
+    </div>
+    <div class="col-sm-10">
+        <h3>TRANG THÔNG TIN THỰC TẬP</h3>
+        <h3>TRƯỜNG ĐẠI HỌC CÔNG NGHỆ - ĐẠI HỌC QUỐC GIA HÀ NỘI </h3>
+    </div>
+</section>
+<hr />
+<section class="row bg-success" style="margin:0px;">
+    <div class="col-sm-8 mid-left">
+        <h6>THÔNG BÁO </h6>
+		<ul>
+			<li><a href="https://drive.google.com/drive/folders/0B7AsBq-Fi9qXSGdHOURMRk1XVVk">Mẫu báo cáo</a></li>
+			<li>
+				Nếu có vấn đề, thắc mắc trong quá tình sử dụng hệ thống, liên hệ qua email: khoa.cntt.vnu@gmail.com. Lưu ý không dùng vnu để gửi mail.
+			</li>
+			<li>
+				Các bạn sinh viên K58 đăng kí tài khoản theo email vnu ví dụ vupk_58@vnu.edu.vn email có số là của các bạn K59 trở về sau
+			</li>
+		</ul>
+    </div>
+    <div class="col-sm-4 mid-right">
+        <form class="form-signin" action="/Login" method="post">
+            <h2 class="h3 mb-3 font-weight-normal">ĐĂNG NHẬP: </h2>
+            <hr />
+            <label for="inputEmail" class="sr-only"> Tên đăng nhập </label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="MSSV" name="Username" required="" autofocus="">
+            <label for="inputPassword" class="sr-only"> Mật khẩu </label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="Password" required="">
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Lưu mật khẩu
+                </label>
+            </div>
+            <div class="has-danger">
+                <label class="text-danger">
+                    <b>@ViewBag.Error</b> 
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng nhập</button>
+            <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+        </form>
+    </div>
+
+</section>
+</body>
+</html>

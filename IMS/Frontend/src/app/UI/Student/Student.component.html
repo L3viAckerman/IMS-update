@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="row">
+    <div class="caption">
+      <span>Danh sách Sinh viên</span>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-bordered">
+      <thead style="white-space: nowrap">
+        <tr>
+          <th>STT</th>
+          <th>Tên đầy đủ</th>
+          <th>Username</th>
+          <th>Lớp</th>
+          <th>Khoa</th>
+          <th>Ngày sinh</th>
+          <th>Vnumail</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchStudentEntity.FullName" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchStudentEntity.Username" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchStudentEntity.Class" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchStudentEntity.Department" type="text" placeholder="Search..." (keydown.enter)="Search()">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchStudentEntity.Birthday" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchStudentEntity.VNUMail" type="text" placeholder="Search..." (keydown.enter)="Search()">
+          </td>
+          <td style="text-align: center">
+            <a class="btn btn-success btn-circle" [routerLink]="['/StudentProfile','00000000-0000-0000-0000-000000000000']" >
+            <i class="fa fa-plus fa-1x" aria-hidden="true"></i></a>
+          </td>
+        </tr>
+        <tr *ngFor="let StudentEntity of (Entities ? Entities : []); let i = index">
+          <td>{{PagingModel.Take * PagingModel.Active + i + 1}}</td>
+          <td>
+            <span *ngIf="!StudentEntity.IsEdit">{{StudentEntity?.FullName}}</span>
+            <input *ngIf="StudentEntity.IsEdit" type="text" class="form-control input-text" placeholder="Fullname..." [(ngModel)]="StudentEntity.FullName" />
+          </td>
+          <td>
+            <span *ngIf="!StudentEntity.IsEdit">{{StudentEntity?.Username}}</span>
+            <input *ngIf="StudentEntity.IsEdit" type="text" class="form-control input-text" placeholder="Username..." [(ngModel)]="StudentEntity.Username" />
+          </td>
+          <td>
+            <span *ngIf="!StudentEntity.IsEdit">{{StudentEntity?.Class}}</span>
+            <input *ngIf="StudentEntity.IsEdit" type="text" class="form-control input-text" placeholder="Class..." [(ngModel)]="StudentEntity.Class" />
+          </td>
+          <td>
+            <span *ngIf="!StudentEntity.IsEdit">{{StudentEntity?.Department}}</span>
+            <input *ngIf="StudentEntity.IsEdit" type="text" class="form-control input-text" placeholder="Department..." [(ngModel)]="StudentEntity.Department" />
+          </td>
+          <td>
+            <span *ngIf="!StudentEntity.IsEdit">{{StudentEntity?.Birthday}}</span>
+            <input *ngIf="StudentEntity.IsEdit" type="text" class="form-control input-text" placeholder="Birthday..." [(ngModel)]="StudentEntity.Birthday" />
+          </td>
+          <td>
+            <span *ngIf="!StudentEntity.IsEdit">{{StudentEntity?.Vnumail}}</span>
+            <input *ngIf="StudentEntity.IsEdit" type="text" class="form-control input-text" placeholder="VNUMail..." [(ngModel)]="StudentEntity.VNUMail" />
+          </td>
+          <td style="text-align: center">
+            <a class="btn btn-info btn-circle" [routerLink]="['/StudentProfile',StudentEntity.Id]">
+              <i class="fa fa-edit fa-1x" aria-hidden="true"></i>
+            </a>
+            <button type="button" class="btn btn-danger btn-circle delete"
+                    mwlConfirmationPopover [title]="'Bạn có muốn ?' + Trick"
+                    [confirmText]="'Xác nhận'"
+                    [cancelText]="'Hủy'"
+                    [appendToBody]="true"
+                    cancelButtonType="danger"
+                    [message]="'Bạn có chắc chắn xóa trường này?'"
+                    placement="left" (confirm)="Delete(Student)">
+              <i class="fa fa-trash fa-1x"
+                 aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div>
+  <app-paging [PagingModel]="PagingModel" [dot]="true" (onChanges)="Search(true)"></app-paging>
+</div>

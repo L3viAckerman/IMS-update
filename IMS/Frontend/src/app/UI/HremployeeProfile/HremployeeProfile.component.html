@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row hr-info">
+      <div class="textArea">
+        <h6>THÔNG TIN NGƯỜI ĐẠI DIỆN</h6>
+        <h5>Công ty: {{CompanyEntity.Name}}</h5>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 offset-2">
+                <div class="form-group row">
+                  <label for="name" class="col-sm-3 col-form-label">Họ tên:</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="name" [(ngModel)]="HremployeeEntity.Name" name="name">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="phone" class="col-sm-3 col-form-label">Thông tin cơ bản:</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="phone" [(ngModel)]="HremployeeEntity.Display" name="display"> 
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2 offset-6">
+              <button type="button" class="btn btn-outline-primary" [routerLink]="'/HremployeeProfile'" (click)="Save()" data-toggle="modal">Lưu thay đổi</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+
+

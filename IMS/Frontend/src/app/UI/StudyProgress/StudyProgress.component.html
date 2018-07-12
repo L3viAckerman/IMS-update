@@ -1,0 +1,53 @@
+<div>
+    <div class="container-fluid">
+      <br>
+      <br>
+      <div class="content">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h6>Họ và tên: {{StudentEntity.FullName}}</h6>
+            <h6 >Lớp: {{StudentEntity.Class}}</h6>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-6 offset-md-3">
+            <h6>Thông tin học tập</h6>
+            <table class="table table-bordered table">
+              <thead style="white-space: nowrap">
+                <tr>
+                  <th>Điểm trung bình</th>
+                  <th>Năm tốt nghiệp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{StudentEntity.Gpa}}</td>
+                  <td>{{StudentEntity.GraduationYear}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class=" form-group col-md-3 offset-md-1 mr-5">
+            <h6 >Khen Thưởng:</h6>
+            <textarea class="form-control input-lg" rows="10" name="discipline" placeholder="" [(ngModel)]="StudentEntity.Certificate"></textarea>
+          </div>
+          <div class=" form-group col-md-3 mr-5">
+            <h6>Trình độ ngoại ngữ:</h6>
+            <textarea class="form-control input-group-lg" rows="10" name="discipline" placeholder="" [(ngModel)]="StudentEntity.LanguageSkill"></textarea>
+          </div>
+          <div class="form-group col-md-3">
+            <h6>Hoạt động ngoại khóa:</h6>
+            <textarea class="form-control" rows="10" name="discipline" placeholder="" [(ngModel)]="StudentEntity.Note"></textarea>
+          </div>
+        </div>
+        <div class="col-12 content">
+          <center><button class="btn btn-outline-primary" text-align="center" type="submit" (click)="Save()">Lưu thay đổi</button></center>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+
+

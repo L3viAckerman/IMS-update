@@ -1,0 +1,168 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+
+  <title> New Student Of Company</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="~/assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+  <link href="~/assets/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <script src="~/assets/jquery-3.2.1.min.js"></script>
+  <script src="~/assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Custom styles for this template -->
+  <link href="/Frontend/src/app/UI/NewStudentOfCompany.component.css" rel="stylesheet">
+</head>
+<body>
+  <div>
+    <!--<div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <div class="input-group mb-3" id="search">
+          <input type="text" class="form-control" placeholder="Tìm kiếm" aria-label="Search" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button">Tìm kiếm</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>-->
+    <div class="row">
+      <div class="col-sm-5 offset-sm-1 card main-info pt-3 mr-2 mt-4">
+        <div class="card-body">
+          <h6 class="card-title">THÔNG TIN CƠ BẢN</h6>
+          <div class="container card-text">
+            <div class="row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10">
+                <form>
+                  <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Họ tên:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="name">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="dob" class="col-sm-2 col-form-label">Ngày sinh:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="dob">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="id" class="col-sm-2 col-form-label">MSSV:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="id">
+                    </div>
+                    <label for="class" class="col-sm-2 col-form-label">Lớp:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="class">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="major" class="col-sm-2 col-form-label">Ngành:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="major">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="vnumail" class="col-sm-2 col-form-label">VNUmail:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="vnumail">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="intern_year" class="col-sm-2 col-form-label">Năm TT:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="intern_year">
+                    </div>
+                    <label for="class" class="col-sm-2 col-form-label">Năm TN:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="class">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>   
+      </div>
+      <div class="col-sm-5 card intern-info pt-3 ml-2 mt-4">
+        <div class="card-body">
+          <h6 class="card-title">THÔNG TIN THỰC TẬP</h6>
+          <div class="container card-text">
+            <div class="row">
+              <div class="col-sm-12">
+                <form>
+                  <div class="form-group row">
+                    <label for="company" class="col-sm-2 col-form-label">Công ty:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="company">
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="position" class="col-sm-2 col-form-label">Vị trí:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="position">
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="place" class="col-sm-2 col-form-label">Địa điểm:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="place">
+                    </div>
+                    <label for="time" class="col-sm-2 col-form-label">Thời gian:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="time">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="final_report" class="col-sm-2 col-form-label">Báo cáo toàn văn:</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="final_report">
+                    </div>
+                    <div class="col-sm-1">
+                      <i class="fa fa-folder-open-o fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-sm-1">
+                      <i class="fa fa-download fa-2x" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="company" class="col-sm-2 col-form-label">Đánh giá:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="company">
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="id" class="col-sm-2 col-form-label">Từ:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="id">
+                    </div>
+                    <label for="class" class="col-sm-2 col-form-label">Tới:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="class">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-sm-3 offset-sm-9">
+        <button type="button" class="btn btn-outline-primary" id="upload-btn">Tải lên tệp</button>
+        <button type="button" class="btn btn-outline-primary" id="save-btn"  [routerLink]="'/StudentListOfCompany'" (click) ="Save()">Lưu thay đổi</button>
+      </div>
+    </div>
+    <br />
+  </div>
+</body>
+</html>

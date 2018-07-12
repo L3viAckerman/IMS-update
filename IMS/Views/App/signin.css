@@ -1,0 +1,29 @@
+﻿
+.body {
+    background-color: lightblue;
+    max-height: 100%;
+}
+.header {
+    color: darkblue;
+    text-align: left;
+}
+
+.mid-left {
+    color: white;
+    padding-left: 50px;
+    padding-top: 10px;
+    border: solid;
+}
+
+.mid-right {
+    padding-top: 10px;
+    color: white;
+    padding-right: 50px;
+    border: solid;
+}
+.footer {
+    color: white;
+    padding-left: 50px;
+    border: solid;
+}
+

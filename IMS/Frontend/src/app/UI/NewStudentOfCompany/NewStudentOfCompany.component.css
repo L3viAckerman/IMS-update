@@ -1,0 +1,22 @@
+body{
+  color: black;
+}
+h6 {
+  text-align:center;
+}
+#upload-btn {
+  margin-right:0px;
+}
+#save-btn {
+  margin: auto; 
+}
+body {
+  background-color: #F8F8F8;
+}
+.main-info {
+  border: 1px groove;
+}
+.intern-info {
+  border: 1px groove;
+}
+

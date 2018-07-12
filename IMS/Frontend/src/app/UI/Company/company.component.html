@@ -1,0 +1,65 @@
+<div>
+  <div class="row">
+    <div class="caption">
+      <span>Danh sách Công ty</span>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-bordered">
+      <thead style="white-space: nowrap">
+        <tr>
+          <th>STT</th>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchCompanyEntity.Name" type="text" placeholder="Search..." (keydown.enter)="Search(SearchCompanyEntity)">
+          </td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-success btn-circle" (click)="Add({IsEdit:true})"><i class="fa fa-plus fa-1x" aria-hidden="true"></i></button>
+          </td>
+        </tr>
+        <tr *ngFor="let CompanyEntity of (Entities ? Entities : []); let i = index">
+          <td>{{PagingModel.Take * PagingModel.Active + i + 1}}</td>
+          <td>
+            <span *ngIf="!CompanyEntity.IsEdit">{{CompanyEntity?.Name}}</span>
+            <input *ngIf="CompanyEntity.IsEdit" type="text" class="form-control input-text" placeholder="Name..." [(ngModel)]="CompanyEntity.Name" />
+          </td>
+          <td class="text-center">
+            <div *ngIf="!CompanyEntity.IsEdit">
+              <a class="btn btn-info btn-circle" (click)="Edit(CompanyEntity)">
+                <i class="fa fa-pencil fa-1x"></i>
+              </a>
+              <button type="button" class="btn btn-danger btn-circle delete"
+                      mwlConfirmationPopover [title]="'Bạn có muốn ?' + Trick"
+                      [confirmText]="'Xác nhận'"
+                      [cancelText]="'Hủy'"
+                      [appendToBody]="true"
+                      cancelButtonType="danger"
+                      [message]="'Bạn có chắc chắn xóa trường này?'"
+                      placement="left" (confirm)="Delete(CompanyEntity)">
+                <i class="fa fa-trash fa-1x"
+                   aria-hidden="true"></i>
+              </button>
+            </div>
+            <div *ngIf="CompanyEntity.IsEdit">
+              <a class="btn btn-primary btn-circle" (click)="Save(CompanyEntity)"
+                 data-toggle="m-tooltip" data-original-title="Save" data-placement="left" data-skin="dark">
+                <i class="fa fa-floppy-o fa-1x"></i>
+              </a>
+              <a class="btn btn-danger btn-circle" (click)="Cancel(CompanyEntity)"
+                 data-toggle="m-tooltip" data-original-title="Cancel" data-placement="right" data-skin="dark">
+                <i class="fa fa-times fa-1x"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-paging [PagingModel]="PagingModel" [dot]="true" (onChanges)="Search(true)"></app-paging>

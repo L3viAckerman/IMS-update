@@ -1,0 +1,143 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+
+  <title> Emails </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="~/assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+  <link href="~/assets/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <script src="~/assets/jquery-3.2.1.min.js"></script>
+  <script src="~/assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Custom styles for this template -->
+  <link href="/Frontend/src/app/UI/EmailStar.component.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="responsive container-fluid">
+    <!--Header content-->
+    <div>
+    </div>
+    <hr>
+    <div class="container-fluid">
+      <div class="row">
+        <!--LEFT CONTENT-->
+        <div class="col-sm-2">
+          <!--Left menu-->
+          <nav class="navbar navbar-expand-md navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item active bg-primary" style="border-style: groove; width: 10rem;">
+                <a class="nav-link text-center" [routerLink]="['/Emails']">Tất cả thư</a>
+              </li>
+              <li class="nav-item" style="border-style: groove; width: 10rem;">
+                <a class="nav-link text-center" [routerLink]="['/EmailNotSeen']">Thư chưa đọc</a>
+              </li>
+              <li class="nav-item" style="border-style: groove; width: 10rem;">
+                <a class="nav-link text-center" [routerLink]="['/EmailStar']">Thư gắn dấu sao</a>
+              </li>
+            </ul>
+          </nav>
+          <br>
+          <button type="button" class="btn btn-outline-primary">Soạn thư mới</button>
+        </div>
+        <!--RIGHT CONENT-->
+        <div class="col-sm-10">
+          <!--Search bar-->
+          <div class="form-inline">
+            <input type="text" class="form-control" placeholder="Search..." style="width: 50%;">
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-search" style="width: 2%;"></i>
+            </button>
+          </div>
+          <table class="table table-striped ">
+            <thead class="thead-light">
+              <tr>
+                <th>Ghi chú</th>
+                <th>Người gửi</th>
+                <th>Tiêu đề</th>
+                <th>Thời gian</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="far fa-square-o"></i>
+                  <i class="fa fa-star"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="far fa-square-o"></i>
+                  <i class="fa fa-star"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="far fa-square-o"></i>
+                  <i class="fa fa-star"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="far fa-square-o"></i>
+                  <i class="fa fa-star"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="far fa-square-o"></i>
+                  <i class="fa fa-star"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="far fa-square-o"></i>
+                  <i class="fa fa-star"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="far fa-square-o"></i>
+                  <i class="fa fa-star"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="form-row text-center">
+            <div class="col-12">
+              <button type="button" class="btn btn-outline-primary">Tải thêm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+
+</body>
+</html>

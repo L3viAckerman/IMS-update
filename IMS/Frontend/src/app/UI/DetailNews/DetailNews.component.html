@@ -1,0 +1,30 @@
+
+<body>
+  <div class="responsive container-fluid">
+    <!--Header mặc định-->
+    <div>
+    </div>
+    <!--Nav template-->
+    <!--Body-->
+    <hr>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3 ">
+        <div class=" p-2 mt-4 mb-4 rounded">
+          <form>
+            <div class="form-group row content">
+              <textarea class="form-control" id="Content" rows="30">
+                 {{InternNewsEntity.Title}}
+
+                 HẠN ĐĂNG KÍ: {{InternNewsEntity.ExpiredDate | date:'yyyy-MM-dd'}}
+
+                 CHI TIẾT: {{InternNewsEntity.Content}}
+              </textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+</body>

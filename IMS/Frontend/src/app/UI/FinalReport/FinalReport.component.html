@@ -1,0 +1,123 @@
+<body>
+  <div class="responsive container-fluid">
+    <!--Header content-->
+    <div>
+    </div>
+    <hr>
+    <!--Nav bar-->
+    <div class="container-fluid responsive">
+      <div class="row">
+        <!--LEFT CONTENT-->
+        <div class="col-sm-4">
+          <div class="card shadow p-1 mb-1 rounded">
+            <div class="row">
+              <div class="col-sm-6 offset-sm-3">
+                <h6 class="text-center" style="border-style: groove;"> Thông tin cơ bản</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-2" style="padding-left: 2px; padding-right: 2px;">
+                <img src="../../../assets/blank-profile.png"
+                     class="rounded" alt="Avatar" style="max-width: 120%;">
+              </div>
+              <div class="col-sm-10">
+                <form>
+                  <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Tên:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="name" [(ngModel)]="StudentEntity.FullName" name="name">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="dob" class="col-sm-2 col-form-label">DOB:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="dob" [(ngModel)]="StudentEntity.Birthday" name="dob">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="id" class="col-sm-2 col-form-label">MSSV:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="id" [(ngModel)]="StudentEntity.Code" name="code">
+                    </div>
+                    <label for="class" class="col-sm-2 col-form-label">Lớp:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="class" [(ngModel)]="StudentEntity.Class" name="class">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="major" class="col-sm-2 col-form-label">Ngành:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="department" [(ngModel)]="StudentEntity.Department" name="department">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="vnumail" class="col-sm-2 col-form-label">VNUMail:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="vnumail" [(ngModel)]="StudentEntity.Vnumail" name="vnumail">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="intern_year" class="col-sm-2 col-form-label">Năm TT:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="intern_year" value="2018">
+                    </div>
+                    <label for="gradute_year" class="col-sm-2 col-form-label">Năm TN:</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="gradute_year" value="2019">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="card" id="mark">
+            
+            <form>
+              <div class="form-group row text-center">
+                <label class="col-sm-6 col-form-label">Điểm:</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="score" [(ngModel)]="StudentEntity.InternshipCourseEntities[0].FinalScore" name="score">
+                </div>
+              </div>
+            </form>
+            
+          </div>
+        </div>
+        <!--RIGHT CONTENT-->
+        <div class="col-sm-8">
+          <div class="row">
+            <div class="col-sm-12">
+              <form>
+                <div class="card p-5 mb-1 ">
+                  <h3 class="text-center">
+                    BÁO CÁO TOÀN VĂN THỰC TẬP SINH VIÊN
+                  </h3>
+                  <div>
+                    <br>
+                    <!--Content binding-->
+                    <!--Hardcode để hiển thị trước-->
+                    <h5> Đề tài: Khôi phục ảnh</h5>
+                    <ul>
+                      <li>Chúng tôi đã hoàn thành xuất sắc kỳ thực tập </li>
+                      <li>Chúng tôi đã tích lũy được nhiều kỹ năng và kinh nghiệm bổ ích.</li>
+                      <li>Chân thành cảm ơn!</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="CompanyComment">Nhận xét của Doanh nghiệp:</label>
+                  <textarea class="form-control" id="CompanyComment" rows="3" [(ngModel)]="StudentEntity.InternshipCourseEntities[0].CompanyComment" name="comment"></textarea>
+                </div>
+                <div class="form-group row">
+                  <label for="LecturerComment">Nhận xét của Giảng viên:</label>
+                  <textarea class="form-control" id="LecturerComment" rows="3" [(ngModel)]="StudentEntity.InternshipCourseEntities[0].LecturerComment" name="comment"></textarea>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,1 @@
+ng build -aot -w -scd=false -v

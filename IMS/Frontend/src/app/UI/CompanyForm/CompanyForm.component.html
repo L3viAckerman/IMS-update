@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+
+  <title> Company Form</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="~/assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+  <link href="~/assets/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <script src="~/assets/jquery-3.2.1.min.js"></script>
+  <script src="~/assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Custom styles for this template -->
+  <link href="/Frontend/src/app/UI/CompanyForm.component.css" rel="stylesheet">
+
+</head>
+<body>
+  <div>
+    <div class="container-fluid">
+        <div class="row">
+          <div class=" col-sm-1"></div>
+          <div class=" col-sm-11">
+            <!--  Thanh điều hướng-->
+            <div class="col-8 offset-2 justify-content-lg-center">
+              <form align="center" class="form-update">
+
+                <div class="form-group row">
+                  <label for="id" class="col-sm-3 col-form-label">Tên công ty</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" required id="companyname" placeholder="Tên công ty" [(ngModel)]="CompanyEntity.Name" name="companyname">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="name" class="col-sm-3 col-form-label">Address</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" required id="address" placeholder="Địa chỉ công ty" [(ngModel)]="CompanyEntity.Address" name="address">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="name" class="col-sm-3 col-form-label">Thời gian thực tập</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" required id="time" placeholder="Thời gian thực Tập" name="time">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="name" class="col-sm-3 col-form-label">Xếp loại</label>
+                  <div class="col-sm-9">
+                    <input type="text" class="form-control" id="rank" placeholder="Xếp loại" name="rank">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="name" class="col-sm-3 col-form-label float-sm-right">Thêm nhận xét doanh nghiệp: </label>
+                  <div class="col-sm-9">
+                    <div id="submitFile" (click)="InputFile.OpenFile()">
+                      <input type="text" [(ngModel)]="InputFile.DataEntity" name="DataEntity" />
+                      <input type="file" #fileupload [(ngModel)]="InputFile.DataEntity" name="InputFile.DataEntity" (change)="InputFile.LoadFile(InputFile.DataEntity)" />
+                    </div>
+
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary float-sm-right" id="submit" (click)="Add()">Submit</button>
+                <button type="button" class="btn btn-primary float-sm-left" id="clear" (click)="Clear()">Clear</button>
+              </form>
+              <!-- <div align="center" class="form-update">
+
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

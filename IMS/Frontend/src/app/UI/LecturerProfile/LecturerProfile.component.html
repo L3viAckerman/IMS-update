@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+
+  <title>Lecturer Profile</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="~/assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+  <link href="~/assets/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <script src="~/assets/jquery-3.2.1.min.js"></script>
+  <script src="~/assets/bootstrap/js/bootstrap.js"></script>
+  <!-- Custom styles for this template -->
+  <link href="/Frontend/src/app/UI/LecturerProfile.component.css" rel="stylesheet">
+
+</head>
+<body>
+  <div>
+    <div class="container-fluid">
+      <div class="row" id="infor">
+        <div class="col-5 offset-4 justify-content-lg-center">
+          <form align="center" class="form-update">
+            <br />
+            <center><img src="../../../assets/blank-profile.png" alt="{{LecturerEntity.Fullname}}" height="80" width="80" /></center>
+            <h6 class="text-sm-center">{{LecturerEntity.Fullname}}</h6>
+            <div class="form-group row">
+              <label for="id" class="col-sm-2 col-form-label">VnuMail: </label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="mail" placeholder="VnuMail" [(ngModel)]="LecturerEntity.Vnumail" name="Vnumail">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Gmail:</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="gmail" placeholder="Gmail" [(ngModel)]="LecturerEntity.Gmail" name="Gmail">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Phone:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="phone" placeholder="Phone" [(ngModel)]="LecturerEntity.Phone" name="Phone">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Ghi chú:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="note" placeholder="Note" [(ngModel)]="LecturerEntity.Note" name="Note">
+              </div>
+            </div>
+            <br />
+            <button type="button" class="btn btn-outline-primary float-sm-right" id="btn-submit" (click)="Save()">Lưu thay đổi</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

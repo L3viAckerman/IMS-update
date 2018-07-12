@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="row">
+    <div class="caption">
+      <span>Danh sách Tin thực tập</span>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-bordered">
+      <thead style="white-space: nowrap">
+        <tr>
+          <th>STT</th>
+          <th>Tiêu đề</th>
+          <th>Thời gian tải lên</th>
+          <th>Hạn chót</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchInternNewsEntity.Title" type="text" placeholder="Search..." (keydown.enter)="Search(SearchInternNewsEntity)">
+          </td>
+
+          <td>
+            <input class="form-control" [(ngModel)]="SearchInternNewsEntity.Role" type="text" placeholder="Search..." (keydown.enter)="Search(SearchInternNewsEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchInternNewsEntity.Role" type="text" placeholder="Search..." (keydown.enter)="Search(SearchInternNewsEntity)">
+          </td>
+          <td></td>
+        </tr>
+        <tr *ngFor="let InternNewsEntity of (Entities ? Entities : []); let i = index">
+          <td>
+            {{PagingModel.Take * PagingModel.Active + i + 1}}
+          </td>
+          <td>
+            {{InternNewsEntity?.Title}}
+          </td>
+          <td>
+            {{InternNewsEntity?.CreatedDate | date:'yyyy-MM-dd'}}
+          </td>
+          <td>
+            {{InternNewsEntity?.ExpiredDate | date:'yyyy-MM-dd'}}
+          </td>
+          <td class="text-center">
+            <div>
+              <button type="button" class="btn btn-success btn-circle" (click)="Follow(InternNewsEntity)">
+                <i class="fa fa-heart fa-1x" aria-hidden="true" title="Follow"></i>
+              </button>
+            <!--</div>
+            <div>-->
+              <button type="button" class="btn btn-primary btn-circle" [routerLink]="['/DetailNews',InternNewsEntity.Id]">
+                <i class="fa fa-drivers-license-o fa-1x" aria-hidden="true" title="See more"></i>
+              </button>
+              <button type="button" class="btn btn-primary btn-circle delete"
+                      mwlConfirmationPopover [title]="'Bạn có chắc chắn xóa trường này?'"
+                      [confirmText]="'Xác nhận'"
+                      [cancelText]="'Hủy'"
+                      [appendToBody]="true"
+                      cancelButtonType="danger"
+                      [message]="'Bạn có chắc chắn xóa trường này?'"
+                      placement="left" (confirm)="Delete(InternNewsEntity)">
+                <i class="fa fa-trash-o fa-1x"
+                   aria-hidden="true"></i>
+              </button>
+            </div>
+            <!--<div *ngIf="InternNewsEntity.IsEdit">
+            <a class="btn btn-primary btn-circle" (click)="Save(InternNewsEntity)"
+               data-toggle="m-tooltip" data-original-title="Save" data-placement="left" data-skin="dark">
+              <i class="fa fa-floppy-o fa-1x"></i>
+            </a>
+            <a class="btn btn-danger btn-circle" (click)="Cancel(InternNewsEntity)"
+               data-toggle="m-tooltip" data-original-title="Cancel" data-placement="right" data-skin="dark">
+              <i class="fa fa-times fa-1x"></i>
+            </a>
+          </div>-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--<div>
+      <app-paging [PagingModel]="PagingModel" [dot]="true" (onChanges)="Search(true)"></app-paging>
+    </div>-->
+  </div>
+</div>
+

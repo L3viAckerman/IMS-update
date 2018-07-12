@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="row">
+    <div class="caption">
+      <span>Danh sách Quản trị viên</span>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-bordered">
+      <thead style="white-space: nowrap">
+        <tr>
+          <th>STT</th>
+          <th>Full Name</th>
+          <th>Username</th>
+          <th>VNU Mail</th>
+          <th>Gmail</th>
+          <th>Phone Number</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchAdminEntity.FullName" type="text" placeholder="Search..." (keydown.enter)="Search(SearchAdminEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchAdminEntity.Username" type="text" placeholder="Search..." (keydown.enter)="Search(SearchAdminEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchAdminEntity.Vnumail" type="text" placeholder="Search..." (keydown.enter)="Search(SearchAdminEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchAdminEntity.Gmail" type="text" placeholder="Search..." (keydown.enter)="Search(SearchAdminEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchAdminEntity.Phone" type="text" placeholder="Search..." (keydown.enter)="Search(SearchAdminEntity)">
+          </td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-success btn-circle" (click)="Add({IsEdit:true})"><i class="fa fa-plus fa-1x" aria-hidden="true"></i></button>
+          </td>
+        </tr>
+        <tr *ngFor="let AdminEntity of (Entities ? Entities : []); let i = index">
+          <td>{{PagingModel.Take * PagingModel.Active + i + 1}}</td>
+          <td>
+            <span *ngIf="!AdminEntity.IsEdit">{{AdminEntity?.Fullname}}</span>
+            <input *ngIf="AdminEntity.IsEdit" type="text" class="form-control input-text" placeholder="FullName..." [(ngModel)]="AdminEntity.Fullname" />
+          </td>
+          <td>
+            <span *ngIf="!AdminEntity.IsEdit">{{AdminEntity?.Username}}</span>
+            <input *ngIf="AdminEntity.IsEdit" type="text" class="form-control input-text" placeholder="Username..." [(ngModel)]="AdminEntity.Username" />
+          </td>
+          <td>
+            <span *ngIf="!AdminEntity.IsEdit">{{AdminEntity?.Vnumail}}</span>
+            <input *ngIf="AdminEntity.IsEdit" type="text" class="form-control input-text" placeholder="VNU Mail..." [(ngModel)]="AdminEntity.Vnumail" />
+          </td>
+          <td>
+            <span *ngIf="!AdminEntity.IsEdit">{{AdminEntity?.Gmail}}</span>
+            <input *ngIf="AdminEntity.IsEdit" type="text" class="form-control input-text" placeholder="Gmail..." [(ngModel)]="AdminEntity.Gmail" />
+          </td>
+          <td>
+            <span *ngIf="!AdminEntity.IsEdit">{{AdminEntity?.Phone}}</span>
+            <input *ngIf="AdminEntity.IsEdit" type="text" class="form-control input-text" placeholder="Phone..." [(ngModel)]="AdminEntity.Phone" />
+          </td>
+          <td class="text-center">
+            <div *ngIf="!AdminEntity.IsEdit">
+              <a class="btn btn-info btn-circle" (click)="Edit(AdminEntity)">
+                <i class="fa fa-pencil fa-1x"></i>
+              </a>
+              <button type="button" class="btn btn-danger btn-circle delete"
+                      mwlConfirmationPopover [title]="'Bạn có muốn ?' + Trick"
+                      [confirmText]="'Xác nhận'"
+                      [cancelText]="'Hủy'"
+                      [appendToBody]="true"
+                      cancelButtonType="danger"
+                      [message]="'Bạn có chắc chắn xóa trường này?'"
+                      placement="left" (confirm)="Delete(AdminEntity)">
+                <i class="fa fa-trash fa-1x"
+                   aria-hidden="true"></i>
+              </button>
+            </div>
+            <div *ngIf="AdminEntity.IsEdit">
+              <a class="btn btn-primary btn-circle" (click)="Save(AdminEntity)"
+                 data-toggle="m-tooltip" data-original-title="Save" data-placement="left" data-skin="dark">
+                <i class="fa fa-floppy-o fa-1x"></i>
+              </a>
+              <a class="btn btn-danger btn-circle" (click)="Cancel(AdminEntity)"
+                 data-toggle="m-tooltip" data-original-title="Cancel" data-placement="right" data-skin="dark">
+                <i class="fa fa-times fa-1x"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-paging [PagingModel]="PagingModel" [dot]="true" (onChanges)="Search(true)"></app-paging>

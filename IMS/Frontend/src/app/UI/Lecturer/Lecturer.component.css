@@ -1,0 +1,15 @@
+body {
+}
+
+.btnLecturer {
+  width: 100%;
+  cursor: pointer;
+}
+
+btnLecturer:hover {
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: #6c757d;
+}

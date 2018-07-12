@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+  <link href="/Frontend/src/app/UI/StudentListOfCompany.component.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+      <br>
+      <h6>Danh sách sinh viên thực tập hè</h6>
+      <h5>Công ty {{CompanyEntity.Name}}</h5>
+      <div>
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Họ tên sinh viên</th>
+              <th>Ngày sinh</th>
+              <th>MSSV</th>
+              <th>Lớp</th>
+              <th>Ngành</th>
+              <th>Năm TN</th>
+              <th>Báo cáo định kì</th>
+              <th>Báo cáo toàn văn</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>
+                <input class="form-control" [(ngModel)]="SearchStudentEntity.FullName" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="SearchStudentEntity.Birthday" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="SearchStudentEntity.Code" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="SearchStudentEntity.Class" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="SearchStudentEntity.Department" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+              </td>
+              <td>
+                <input class="form-control" [(ngModel)]="SearchStudentEntity.GraduationYear" type="text" placeholder="Search..." (keydown.enter)="Search(SearchStudentEntity)">
+              </td>
+              <td></td>
+              <td></td>
+              <td style="text-align: center">
+                <button type="button" class="btn btn-success btn-circle" (click)="Add({IsEdit:true})"><i class="fa fa-plus fa-1x" aria-hidden="true"></i></button>
+              </td>
+            </tr>
+            <tr *ngFor="let Student of (Entities ? Entities : []); let i = index">
+              <td>{{PagingModel.Take * PagingModel.Active + i + 1}}</td>
+              <td>{{Student?.FullName}}</td>
+              <td>{{Student?.Birthday}}</td>
+              <td>{{Student?.Code}}</td>
+              <td>{{Student?.Class}}</td>
+              <td>{{Student?.Department}}</td>
+              <td>{{Student?.GraduationYear}}</td>
+              <td>
+                <button type="button" class="btn btn-outline-info btn-circle" [routerLink]="'/PeriodReport'"><i class="fa fa-folder-open fa-1x" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-warning btn-circle" (click)="Download()"><i class="fa fa-download fa-1x" aria-hidden="true"></i></button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-outline-info btn-circle" [routerLink]="['/FinalReport']"><i class="fa fa-folder-open fa-1x" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-outline-warning btn-circle" (click)="Download()"><i class="fa fa-download fa-1x" aria-hidden="true"></i></button>
+              </td>
+              <td style="text-align: center">
+                <a class="btn btn-info btn-circle" [routerLink]="['/StudentProfile',Student.Id]">
+                  <i class="fa fa-drivers-license-o fa-1x" aria-hidden="true"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</body>
+</html>

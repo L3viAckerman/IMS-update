@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+  <link href="/Frontend/src/app/UI/StudentProfile.component.css" rel="stylesheet">
+
+</head>
+<body>
+  <div>
+    <div class="container">
+      <div class="row main-row">
+        <div class="content">
+          <br />
+          <button type="button" class="btn btn-outline-primary" id="btn-submit" [routerLink]="'/StudentProfile'" (click)="Save()" data-toggle="modal">Ghi nhận</button>
+          <div class="row">
+            <!--Mẫu form thông tin cơ bản-->
+            <div class="col-sm-6 main-info mt-2 mb-2 pt-3 pb-3">
+              <h6>Thông tin cơ bản</h6>
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-2 avatar">
+                    <img src="../../../assets/blank-profile.png" height="80" width="80" />
+                  </div>
+                  <div class="col-sm-10">
+                    <form>
+                      <div class="form-group row">
+                        <label for="id" class="col-sm-3 col-form-label">MSSV:</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="id" placeholder="MSSV" [(ngModel)]="StudentEntity.Code" name="text">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">Họ và tên:</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="name" placeholder="Họ tên" [(ngModel)]="StudentEntity.FullName" name="name">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="dob" class="col-sm-3 col-form-label">Ngày sinh: </label>
+                        <div class="col-sm-5">
+                          <input type="text" class="form-control" id="dob" [(ngModel)]="StudentEntity.Birthday" name="dob">
+                        </div>
+                        <span class="col-sm-2 col-form-label ">GT:</span>
+                        <span class="col-sm-2">
+                          <select name="gender">
+                            <option value="female">Nữ</option>
+                            <option value="male">Nam</option>
+                            <option value="other">Khác</option>
+                          </select>
+                        </span>
+                      </div>
+                      <div class="form-group row">
+                        <label for="class" class="col-sm-3 col-form-label">Lớp: </label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="class" placeholder="Lớp" [(ngModel)]="StudentEntity.Class" name="class">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="vnumail" class="col-sm-3 col-form-label">VNUMail: </label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" id="vnumail" placeholder="vnumail" [(ngModel)]="StudentEntity.Vnumail" name="vnumail">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Mẫu form thông tin liên hệ -->
+
+            <div class="col-sm-6 contact-info mt-2 mb-2 pt-3 pb-3">
+              <h6>Thông tin liên hệ </h6>
+              <div class="container">
+                <div class="row">
+                  <form class="col-sm-12">
+                    <div class="form-group row">
+                      <label for="fixed_phone" class="col-sm-3 col-form-label">Địa chỉ:</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="Address" [(ngModel)]="StudentEntity.Address" name="Address">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="cell_phone" class="col-sm-3 col-form-label">Di động:</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="cell_phone" [(ngModel)]="StudentEntity.Phone" name="cell_phone">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="fb" class="col-sm-3 col-form-label">Facebook:</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="fb" [(ngModel)]="StudentEntity.Facebook" name="fb">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="skype" class="col-sm-3 col-form-label">ID Skype:</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="skype" [(ngModel)]="StudentEntity.Skype" name="skype">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="email" class="col-sm-3 col-form-label">Email: </label>
+                      <div class="col-sm-9">
+                        <input type="email" class="form-control" id="email" [(ngModel)]="StudentEntity.PersonalMail" name="email">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Mẫu form Sở thích và định hướng -->
+          <div class="row">
+            <div class="col-sm-6 hobby mt-2 mb-2 pt-3 pb-3">
+              <h6>Sở thích, Mong muốn</h6>
+              <div class="container">
+                <div class="row">
+                  <form>
+                    <div class="form-group">
+                      <label for="hobby">Sở thích cá nhân:</label>
+                      <textarea class="form-control" rows="6" cols="100" id="note" [(ngModel)]="StudentEntity.Note" name="note"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="want">Mong muốn:</label>
+                      <textarea class="form-control" rows="2" cols="100" id="goal" [(ngModel)]="StudentEntity.Goal" name="goal"></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 orientation mt-2 mb-2 pt-3 pb-3">
+              <h6>Định hướng tương lai</h6>
+              <div class="container">
+                <div class="row">
+                  <form>
+                    <div class="form-group">
+                      <label for="orientation">Kinh nghiệm:</label>
+                      <textarea class="form-control" rows="4" cols="100" id="exp" [(ngModel)]="StudentEntity.Experience" name="exp"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="tech_interest">Định hướng:</label>
+                      <textarea class="form-control" rows="4" cols="100" id="position" [(ngModel)]="StudentEntity.Position" name="position"></textarea>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

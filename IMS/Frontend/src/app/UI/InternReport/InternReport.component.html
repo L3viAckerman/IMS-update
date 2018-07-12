@@ -1,0 +1,130 @@
+<div>
+  <div class="row">
+    <div class="caption">
+      <span>Danh sách {{Title}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-bordered">
+      <thead style="white-space: nowrap">
+        <tr>
+          <th>STT</th>
+          <th>Company's Score</th>
+          <th>Company's Comment</th>
+          <th>Lecturer's Score</th>
+          <th>Lecturer's Comment</th>
+          <th>Created at</th>
+          <th>Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchInternReportEntity.InternReportName" type="text" placeholder="Search..." (keydown.enter)="Search()">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchInternReportEntity.Password" type="text" placeholder="Search..." (keydown.enter)="Search()">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchInternReportEntity.Role" type="text" placeholder="Search..." (keydown.enter)="Search()">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchInternReportEntity.Role" type="text" placeholder="Search..." (keydown.enter)="Search()">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchInternReportEntity.Role" type="text" placeholder="Search..." (keydown.enter)="Search()">
+          </td>
+          <td style="text-align: center">
+
+            <button type="button" class="btn btn-success btn-circle"><i class="fa fa-download fa-1x" aria-hidden="true"></i></button>
+          </td>
+        </tr>
+        <tr *ngFor="let InternReport of (InternReportEntities ? InternReportEntities : []); let i = index">
+          <td>{{PagingModel.Take * PagingModel.Active + i + 1}}</td>
+          <td>{{InternReport?.PartnerScore}}</td>
+          <td>{{InternReport?.CompanyComment}}</td>
+          <td>{{InternReport?.LecturerScore}}</td>
+          <td>{{InternReport?.LecturerComment}}</td>
+          <td>{{InternReport?.Date}}</td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-primary btn-circle" (click)="LoadDataToUpdateModal(InternReport,i)">
+              <i class="fa fa-edit fa-1x" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-circle delete"
+                    mwlConfirmationPopover [title]="'Bạn có muốn ?' + Trick"
+                    [confirmText]="'Xác nhận'"
+                    [cancelText]="'Hủy'"
+                    [appendToBody]="true"
+                    cancelButtonType="danger"
+                    [message]="'Bạn có chắc chắn xóa trường này?'"
+                    placement="left" (confirm)="Delete(InternReport)">
+              <i class="fa fa-trash fa-1x"
+                 aria-hidden="true"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-paging [PagingModel]="PagingModel" [dot]="true" (onChanges)="Search(true)"></app-paging>
+<app-modal [OpenModalId]="EditModalComponent.ID">
+  <modal-header>
+    <h5 class="modal-title">
+      <i class="fa fa-dropbox" aria-hidden="true"></i>
+      Sửa {{ Title }}
+    </h5>
+  </modal-header>
+  <modal-body>
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2" style="padding-bottom: 10px;">
+        <label class="control-label">Id:</label>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px;">
+        <input type="text" class="form-control" placeholder="Nhập Id"
+               name="IdEdit" [(ngModel)]="EditedInternReportEntity.Id"
+               required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2" style="padding-bottom: 10px;">
+        <label class="control-label">InternReportName:</label>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px;">
+        <input type="text" class="form-control" placeholder="Nhập InternReportName"
+               name="InternReportNameEdit" [(ngModel)]="EditedInternReportEntity.InternReportName"
+               required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2" style="padding-bottom: 10px;">
+        <label class="control-label">Password:</label>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px;">
+        <input type="text" class="form-control" placeholder="Nhập Password"
+               name="InternReportNameEdit" [(ngModel)]="EditedInternReportEntity.Password"
+               required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2" style="padding-bottom: 10px;">
+        <label class="control-label">IsDeleted:</label>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4" style="padding-bottom: 10px;">
+        <input type="text" class="form-control" placeholder="Nhập IsDeleted"
+               name="IsDeletedEdit" [(ngModel)]="EditedInternReportEntity.IsEdit"
+               required />
+      </div>
+    </div>
+  </modal-body>
+  <modal-footer>
+    <button data-dismiss="modal" data-backdrop="false" (click)="Edit()"
+            class="btn btn-success">
+      <i class="fa fa-check" aria-hidden="true"></i> Sửa
+    </button>
+    <button type="button" class="btn btn-danger" data-dismiss="modal">
+      <span><i class="fa fa-times" aria-hidden="true"></i> Hủy</span>
+    </button>
+  </modal-footer>
+</app-modal>

@@ -1,0 +1,78 @@
+<div>
+  <div class="row">
+    <div class="caption">
+      <span>Danh sách tài khoản</span>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table table-bordered">
+      <thead style="white-space: nowrap">
+        <tr>
+          <th>STT</th>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Role</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchUserEntity.UserName" type="text" placeholder="Search..." (keydown.enter)="Search(SearchUserEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchUserEntity.Fullname" type="text" placeholder="Search..." (keydown.enter)="Search(SearchUserEntity)">
+          </td>
+          <td>
+            <input class="form-control" [(ngModel)]="SearchUserEntity.Role" type="text" placeholder="Search..." (keydown.enter)="Search(SearchUserEntity)">
+          </td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-success btn-circle" (click)="Add({IsEdit:true})"><i class="fa fa-plus fa-1x" aria-hidden="true" ></i></button>
+          </td>
+        </tr>
+        <tr *ngFor="let UserEntity of (Entities ? Entities : []); let i = index">
+          <td>{{PagingModel.Take * PagingModel.Active + i + 1}}</td>
+          <td>
+            <span *ngIf="!UserEntity.IsEdit">{{UserEntity?.Username}}</span>
+            <input *ngIf="UserEntity.IsEdit" type="text" class="form-control input-text" placeholder="Name..." [(ngModel)]="UserEntity.Username" />
+          </td>
+          <td>
+            <span *ngIf="!UserEntity.IsEdit">{{UserEntity?.Password}}</span>
+            <input *ngIf="UserEntity.IsEdit" type="text" class="form-control input-text" placeholder="Name..." [(ngModel)]="UserEntity.Password" />
+          </td>
+          <td>{{UserEntity?.Roles}}</td>
+          <td class="text-center">
+            <div *ngIf="!UserEntity.IsEdit">
+              <a class="btn btn-info btn-circle" (click)="Edit(UserEntity)">
+                <i class="fa fa-pencil fa-1x"></i>
+              </a>
+              <button type="button" class="btn btn-danger btn-circle delete"
+                      mwlConfirmationPopover [title]="'Bạn có muốn ?' + Trick"
+                      [confirmText]="'Xác nhận'"
+                      [cancelText]="'Hủy'"
+                      [appendToBody]="true"
+                      cancelButtonType="danger"
+                      [message]="'Bạn có chắc chắn xóa trường này?'"
+                      placement="left" (confirm)="Delete(UserEntity)">
+                <i class="fa fa-trash fa-1x"
+                   aria-hidden="true"></i>
+              </button>
+            </div>
+            <div *ngIf="UserEntity.IsEdit">
+              <a class="btn btn-primary btn-circle" (click)="Save(UserEntity)"
+                 data-toggle="m-tooltip" data-original-title="Save" data-placement="left" data-skin="dark">
+                <i class="fa fa-floppy-o fa-1x"></i>
+              </a>
+              <a class="btn btn-danger btn-circle" (click)="Cancel(UserEntity)"
+                 data-toggle="m-tooltip" data-original-title="Cancel" data-placement="right" data-skin="dark">
+                <i class="fa fa-times fa-1x"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-paging [PagingModel]="PagingModel" [dot]="true" (onChanges)="Search(true)"></app-paging>

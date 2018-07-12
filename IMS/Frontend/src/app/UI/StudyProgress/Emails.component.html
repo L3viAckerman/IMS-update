@@ -1,0 +1,218 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+    <!--CSS file ref-->
+    <link rel="stylesheet" type="text/css" media="screen" href="Email.css" />
+
+</head>
+
+<body style="background-color: rgb(245, 245, 240);">
+  <div class="responsive container-fluid">
+    <!--Header content-->
+    <div>
+    </div>
+    <hr>
+    <div class="container-fluid">
+      <div class="row">
+        <!--LEFT CONTENT-->
+        <div class="col-sm-2">
+          <!--Lef menu-->
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item" style="border-style: groove">
+              <a class="nav-link" href="#">
+                <span>
+                  <i class="fas fa-arrow-circle-right"></i>
+                </span>TIN THỰC TẬP
+              </a>
+            </li>
+            <li class="nav-item" style="border-style: groove">
+              <a class="nav-link" href="#">
+                <span>
+                  <i class="fas fa-arrow-circle-right"></i>
+                </span>THÔNG TIN CÁ NHÂN
+              </a>
+            </li>
+            <li class="nav-item" style="border-style: groove">
+              <a class="nav-link" href="#">
+                <span>
+                  <i class="fas fa-arrow-circle-right"></i>
+                </span>QUẢN LÝ BÁO CÁO
+              </a>
+            </li>
+          </ul>
+          <br>
+          <a class="btn btn-primary" role="button" href="#" style="width: 100%">
+            <h5>SOẠN THƯ MỚI</h5>
+          </a>
+        </div>
+        <!--RIGHT CONTENT-->
+        <div class="col-sm-10">
+          <!--Search bar-->
+          <div class="form-inline">
+            <input type="text" class="form-control" placeholder="Search..." style="width: 50%;">
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-search" style="width: 2%;"></i>
+            </button>
+          </div>
+          <!--Nav-->
+          <nav class="navbar navbar-expand-md navbar-light">
+            <ul class="navbar-nav">
+              <li class="nav-item active bg-primary" style="border-style: groove; width: 10rem;">
+                <a class="nav-link text-center" [routerLink]="['/Emails']">Tất cả thư</a>
+              </li>
+              <li class="nav-item" style="border-style: groove; width: 10rem;">
+                <a class="nav-link text-center" [routerLink]="['/EmailNotSeen']">Thư chưa đọc</a>
+              </li>
+              <li class="nav-item" style="border-style: groove; width: 10rem;">
+                <a class="nav-link text-center" [routerLink]="['/EmailStar']">Thư gắn dấu sao</a>
+              </li>
+            </ul>
+          </nav>
+
+          <table class="table table-hover">
+            <thead class="bg bg-primary text-white">
+              <tr>
+                <th>Ghi chú</th>
+                <th>Người gửi</th>
+                <th>Tiêu đề</th>
+                <th>Thời gian</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+              <tr>
+                <td style="width: 8.33%">
+                  <i class="fa fa-check-square"></i>
+                  <i class="fa fa-star-o"></i>
+                </td>
+                <td style="width: 25%">Đỗ Văn A</td>
+                <td style="width: 50%">Đánh giá học lực</td>
+                <td style="width: 16.66%;">8h00</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="form-row text-center">
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary text-white">
+                <h4>Tải thêm...</h4>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- Footer mặc định -->
+    <div class="row bg-primary footer font-color text-white">
+      <div>
+        <p>@2018 Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội </p>
+        <p>Địa chỉ: E3, 144 Xuân Thủy, Cầu Giấy, Hà Nội</p>
+        <p>Điện thoại: 024.37547.461; Fax: 024.37547.460; Email: uet@vnu.edu.vn</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

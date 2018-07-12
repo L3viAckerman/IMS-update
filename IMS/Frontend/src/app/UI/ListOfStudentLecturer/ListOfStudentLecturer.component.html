@@ -1,0 +1,56 @@
+<head>
+   <link href="/Frontend/src/app/UI/ListOfStudentLecturer/ListOfStudentLecturer.component.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="caption">
+        <span>Danh sách sinh viên quản lí</span>
+      </div>
+    </div>
+    <div class="row">
+      <table class="table table-bordered">
+        <thead style="white-space: nowrap">
+          <tr>
+            <th>STT</th>
+            <th>Họ tên sinh viên</th>
+            <th>MSSV</th>
+            <th>Ngày sinh</th>
+            <th>Khoa</th>
+            <th>Mail</th>
+            <th>Báo cáo định kì</th>
+            <th>Báo cáo toàn văn</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Student of (Entities ? Entities : []); let i = index">
+            <td>{{PagingModel.Take * PagingModel.Active + i + 1}}</td>
+            <td>{{Student?.FullName}}</td>
+            <td>{{Student?.Code}}</td>
+            <td>{{Student?.Birthday}}</td>
+            <td>{{Student?.Department}}</td>
+            <td>{{Student?.Vnumail}}</td>
+            <td style="text-align: center">
+              <button type="button" class="btn btn-outline-info btn-circle" [routerLink]="'/PeriodReport'"><i class="fa fa-folder-open fa-1x" aria-hidden="true"></i></button>
+              <button type="button" class="btn btn-outline-warning btn-circle" (click)="Download()"><i class="fa fa-download fa-1x" aria-hidden="true"></i></button>
+            </td>
+            <td style="text-align: center">
+              <a class="btn btn-outline-info btn-circle" [routerLink]="'/FinalReport'">
+                <i class="fa fa-folder-open fa-1x" aria-hidden="true">
+                  </i>
+              </a>
+              <button type="button" class="btn btn-outline-warning btn-circle" (click)="Download()"><i class="fa fa-download fa-1x" aria-hidden="true"></i></button>
+            </td>
+            <td style="text-align: center">
+              <a class="btn btn-info btn-circle" [routerLink]="['/StudentProfile',Student.Id]">
+                <i class="fa fa fa-drivers-license-o fa-1x" aria-hidden="true"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</body>

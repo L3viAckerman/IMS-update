@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+  <!-- Custom styles for this template -->
+  <link href="/Frontend/src/app/UI/InternNewsManagement.component.css" rel="stylesheet">
+
+</head>
+<body>
+  <div>
+    <div class="row">
+      <div class="col-sm-3 content-left ">
+        <div class="container">
+          <div class="row content-name">
+            <div>
+              <form>
+                <div class="form-group row">
+                  <h6 class="companyName">Công ty: {{CompanyEntity.Name}}</h6>
+                </div>
+                <div class="form-group row">
+                  <label for="name" class="col-sm-2 col-form-label">Họ tên: </label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" [(ngModel)]="HremployeeEntity.Name" name="name">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="func" class="col-sm-2 col-form-label">Chức vụ:</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="func" [(ngModel)]="HremployeeEntity.Display" name="func">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <button type="button" class="col-sm-12 btn btn-outline-success" [routerLink]="'/NewInternNews'">Thêm bài đăng mới</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-9 content-right">
+        <div class="container">
+          <div class="row nav-search">
+            <div class="col-sm-5 offset-3">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control" [(ngModel)]="SearchInternNewsEntity.Title" placeholder="Tìm kiếm" aria-label="Search" aria-describedby="basic-addon2" (keydown.enter)="Search(SearchInternNewsEntity)">
+              </div>
+            </div>
+            <div class="col-sm-1">
+              Theo
+            </div>
+            <div class="col-sm-1 ">
+              <select>
+                <option>Mặc định</option>
+                <option>Ngày hết hạn</option>
+              </select>
+            </div>
+          </div>
+         
+          <div class="row post" *ngFor="let News of (Entities ? Entities : []); let i = index">
+            <div class="col-sm-2">
+              <img src="" />
+            </div>
+            <div class="col-sm-10">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-2" style="font-weight:bold">Tiêu đề:</div>
+                  <div class="col-sm-10">{{News?.Title}}</div>
+                </div>
+                <div class="row">
+                  <b class="col-sm-2">Ngày đăng:</b>
+                  <span class="col-sm-4">{{News?.CreatedDate | date:'yyyy-MM-dd'}}</span>
+                  <b class="col-sm-2">Ngày hết hạn:</b>
+                  <span class="col-sm-4">{{News?.ExpiredDate | date:'yyyy-MM-dd'}}</span>
+                </div>
+                <div class="row">
+                  <div class="col-sm-2" style="font-weight:bold">Mô tả:</div>
+                  <div class="col-sm-10">
+                    <a [routerLink]="['/DetailNews',News.Id]">Xem thêm ...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
